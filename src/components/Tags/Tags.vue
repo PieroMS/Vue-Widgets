@@ -1,9 +1,17 @@
+<!-- OPTIONS API -->
 <script>
   export default{
     data(){
       return {
         currentValue : "",
         tags: []
+      }
+    },
+
+    mounted() {
+      const storedTags = localStorage.getItem("tags");
+      if (storedTags) {
+        this.tags = JSON.parse(storedTags);
       }
     },
 
@@ -15,13 +23,19 @@
           if(!exist){
             this.tags.push(this.currentValue);
             this.currentValue = "";
+            this.saveTags();
           }
         }
       },
       deleteTag(tag){
         // filter crea un nuevo array y con la arrow function agrega los elementos que son diferentes al tag del argumento
         this.tags = this.tags.filter((item) => item !== tag);
-      }
+        this.saveTags();
+      },
+      saveTags() {
+        // el setItem guarda la data en el localstorage del navegador en formato json
+        localStorage.setItem("tags", JSON.stringify(this.tags));
+      },
     }
   }
 </script>
