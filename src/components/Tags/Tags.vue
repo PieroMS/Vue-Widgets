@@ -70,7 +70,7 @@
   }
 
   .tag {
-      background-color: #007BFF;
+      background-color: #4CAF50;
       color: white;
       border-radius: 3px;
       padding: 5px 10px;
@@ -89,7 +89,7 @@
   }
 
   .tag:hover {
-      background-color: #0056b3;
+      background-color: #388E3C;
   }
 
   form {
@@ -104,7 +104,7 @@
   }
 
   input[type="text"]:focus {
-      border-color: #007BFF;
+      border-color: #4CAF50;
       outline: none;
   }
 
@@ -113,6 +113,6 @@
   }
 
   input[type="text"]:invalid {
-      border-color: #dc3545;
+      border-color: #d32f2f;
   }
 </style>
