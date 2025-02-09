@@ -22,18 +22,18 @@
 
 <style scoped>
   .task-input {
-      padding: 10px;
-      margin: 10px 0;
-      border: 2px solid #4CAF50;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #4CAF50;
     background: white;
-      border-radius: 5px;
-      font-size: 16px;
-      width: calc(100% - 22px);
-      box-sizing: border-box;
-      transition: border-color 0.3s;
-      font-family: Arial, sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-family: Arial, sans-serif;
   }
-  
+
   .task-input:focus {
     border: 2px solid #59eb5e;
     outline: none;

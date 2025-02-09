@@ -8,10 +8,10 @@
       id: crypto.randomUUID(),
       name: 'Default Board',
       items: [
-          {
-            id: crypto.randomUUID(),
-            title: 'Default Task'
-          }
+        {
+          id: crypto.randomUUID(),
+          title: 'Default Task'
+        }
       ]
     }
   ]);
@@ -19,8 +19,8 @@
   function handleNewItem(text, board){
     //console.log(text.value, board.name);
     board.items.push({
-        id: crypto.randomUUID(),
-        title: text.value
+      id: crypto.randomUUID(),
+      title: text.value
     });
   }
 
@@ -57,83 +57,83 @@
   <div class="boards-container">
     <div class="boards">
       <div class="board" @drop="onDrop($event, board)" @dragover.prevent @dragenter.prevent v-for="board in boards" :key="board.id">
-          <p class="board-name"> {{ board.name }}</p>
-          <!-- la sintaxis del emit puede variar como se ve :v -->
-          <InputNewTask @on-new-item="(text) => handleNewItem(text, board)"/>
-          <div class="items">
-            <div class="item" draggable="true" @dragstart="startDrag($event, board, item)" v-for="item in board.items" :key="item.id" >
-              <p>{{ item.title }}</p>
-            </div>
+        <p class="board-name"> {{ board.name }}</p>
+        <!-- la sintaxis del emit puede variar como se ve :v -->
+        <InputNewTask @on-new-item="(text) => handleNewItem(text, board)"/>
+        <div class="items">
+          <div class="item" draggable="true" @dragstart="startDrag($event, board, item)" v-for="item in board.items" :key="item.id" >
+            <p>{{ item.title }}</p>
           </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-nav {
-  margin: 20px 0;
-}
+  nav {
+    margin: 20px 0;
+  }
 
-li {
-  background-color: #4CAF50;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: .4s;
-}
-li:hover {
-  background-color: #4ece52;
-}
+  li {
+    background-color: #4CAF50;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: .4s;
+  }
+  li:hover {
+    background-color: #4ece52;
+  }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
 
-nav ul li {
-  margin-right: 15px;
-}
+  nav ul li {
+    margin-right: 15px;
+  }
 
-nav ul li a {
-  font-family: Arial, sans-serif;
-  color: white;
-  text-decoration: none;
-}
+  nav ul li a {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+  }
 
-.boards-container {
-  display: flex;
-  justify-content: start;
-  padding: 20px;
-}
+  .boards-container {
+    display: flex;
+    justify-content: start;
+    padding: 20px;
+  }
 
-.boards {
-  display: flex;
-  gap: 20px;
-}
+  .boards {
+    display: flex;
+    gap: 20px;
+  }
 
-.board {
-  background: #ebebeb;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 250px;
-}
+  .board {
+    background: #ebebeb;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+  }
 
-.board .board-name{
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  text-align: start;
-}
+  .board .board-name{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-align: start;
+  }
 
-.item {
-  font-family: Arial, sans-serif;
-  background: rgb(245, 245, 245);
-  padding: 4px 10px;
-  margin-top: 12px;
-  border-radius: 8px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-}
+  .item {
+    font-family: Arial, sans-serif;
+    background: rgb(245, 245, 245);
+    padding: 4px 10px;
+    margin-top: 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  }
 </style>
 
